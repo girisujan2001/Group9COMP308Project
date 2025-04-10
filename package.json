@@ -1,0 +1,30 @@
+{
+  "name": "community-engagement-system",
+  "version": "1.0.0",
+  "description": "A community engagement system using micro-frontends and microservices with GraphQL",
+  "main": "index.js",
+  "scripts": {
+    "release-ports": "node scripts/port-manager.js 4001 && node scripts/port-manager.js 4002 && node scripts/port-manager.js 5000 && node scripts/port-manager.js 5001 && node scripts/port-manager.js 5002",
+    "install:all": "npm run install:backend && npm run install:frontend",
+    "install:backend": "cd backend/auth-service && npm install && cd ../community-service && npm install",
+    "install:frontend": "cd frontend/host-app && npm install && cd ../auth-app && npm install && cd ../community-app && npm install",
+    "start:backend": "concurrently --names \"AUTH-SERVICE,COMMUNITY-SERVICE\" --prefix \"[{name}]\" --prefix-colors \"bgGreen.bold,bgBlue.bold\" --kill-others-on-fail \"cd backend/auth-service && npm start\" \"cd backend/community-service && npm start\"",
+    "start:frontend": "concurrently --names \"HOST-APP,AUTH-APP,COMMUNITY-APP\" --prefix \"[{name}]\" --prefix-colors \"bgMagenta.bold,bgCyan.bold,bgYellow.bold\" --kill-others-on-fail \"cd frontend/host-app && npm run dev\" \"cd frontend/auth-app && npm run dev\" \"cd frontend/community-app && npm run dev\"",
+    "start": "concurrently --names \"BACKEND,FRONTEND\" --prefix \"[{name}]\" --prefix-colors \"bgRed.bold,bgGreen.bold\" --kill-others-on-fail \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:debug": "npm run start:backend & npm run start:frontend",
+    "logs": "concurrently --prefix \"[{name}]\" --prefix-colors \"bgWhite.black\" \"tail -f backend/auth-service/logs/combined.log\" \"tail -f backend/community-service/logs/combined.log\""
+  },
+  "keywords": [
+    "micro-frontends",
+    "microservices",
+    "graphql",
+    "react",
+    "vite",
+    "module-federation"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"fixUrlLoader.js","sourceRoot":"","sources":["../../../src/loaders/fixUrlLoader.ts"],"names":[],"mappings":";;AAWA,oCAWC;AAtBD;;;;;;;;;;GAUG;AACH,SAAgB,YAAY,CAAC,OAAe;IAC1C,qEAAqE;IACrE,wFAAwF;IACxF,MAAM,mBAAmB,GACvB,wEAAwE,CAAC;IAE3E,oGAAoG;IACpG,OAAO,OAAO,CAAC,OAAO,CACpB,mBAAmB,EACnB,kBAAkB,mBAAmB,KAAK,CAC3C,CAAC;AACJ,CAAC;AAED,yEAAyE;AACzE,kBAAe,YAAY,CAAC"}

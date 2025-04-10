@@ -1,0 +1,4 @@
+2025-04-10 10:50:34:5034 [31merror[39m: [31mGraphQL Error: Cannot query field "company" on type "Query".[39m
+2025-04-10 10:50:34:5034 [31merror[39m: [31mGraphQL Error: Cannot query field "roadster" on type "Query".[39m
+2025-04-10 11:14:54:1454 [31merror[39m: [31mLogin error: Invalid credentials[39m
+2025-04-10 11:14:54:1454 [31merror[39m: [31mGraphQL Error: Invalid credentials[39m

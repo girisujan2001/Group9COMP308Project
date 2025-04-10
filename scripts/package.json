@@ -1,0 +1,11 @@
+{
+  "name": "port-management-tools",
+  "version": "1.0.0",
+  "type": "module",
+  "bin": {
+    "release-port": "./port-manager.js"
+  },
+  "scripts": {
+    "release": "node port-manager.js"
+  }
+}
