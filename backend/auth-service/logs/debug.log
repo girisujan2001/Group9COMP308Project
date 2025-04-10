@@ -23,3 +23,10 @@
 2025-04-10 11:27:22:2722 [32minfo[39m: [32mPort 4001 is available[39m
 2025-04-10 11:27:22:2722 [32minfo[39m: [32mAuth Service running at http://localhost:4001/graphql[39m
 2025-04-10 11:27:22:2722 [32minfo[39m: [32mConnected to MongoDB[39m
+2025-04-10 11:32:18:3218 [32minfo[39m: [32mAttempting to find available port starting from 4001, max attempts: 10[39m
+2025-04-10 11:32:18:3218 [33mwarn[39m: [33mPort 4001 is already in use[39m
+2025-04-10 11:32:18:3218 [33mwarn[39m: [33mPort 4002 is already in use[39m
+2025-04-10 11:32:18:3218 [33mwarn[39m: [33mPort 4003 is already in use[39m
+2025-04-10 11:32:18:3218 [32minfo[39m: [32mPort 4004 is available[39m
+2025-04-10 11:32:18:3218 [32minfo[39m: [32mAuth Service running at http://localhost:4004/graphql[39m
+2025-04-10 11:32:18:3218 [32minfo[39m: [32mConnected to MongoDB[39m

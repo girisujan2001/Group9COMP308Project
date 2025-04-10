@@ -1,152 +1,132 @@
 # Community Engagement System
 
-A community engagement system built with micro-frontends and microservices architecture using GraphQL for communication.
+![Project Banner](https://via.placeholder.com/1200x400?text=Community+Engagement+System)
+
+A full-stack application for community interaction featuring news, discussions, and help request management.
+
+## Features
+
+- **News Management**: View and share community news
+- **Discussion Forums**: Engage in community discussions
+- **Help Requests**: Create and manage help requests
+- **User Authentication**: Secure login and registration
+- **Real-time Updates**: GraphQL subscriptions for live updates
+- **Responsive Design**: Works on all device sizes
+
+## Technology Stack
+
+### Frontend
+- React.js
+- Vite
+- Apollo Client
+- React Bootstrap
+- GraphQL
+
+### Backend
+- Node.js
+- Express
+- Apollo Server
+- MongoDB
+- Mongoose
+- JSON Web Tokens (JWT)
+
+## Installation
+
+### Prerequisites
+- Node.js (v16+)
+- MongoDB (v5+)
+- Git
+
+### Setup Instructions
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/community-engagement-system.git
+cd community-engagement-system
+```
+
+2. Install dependencies for both frontend and backend:
+```bash
+cd frontend/community-app && npm install
+cd ../../backend/community-service && npm install
+```
+
+3. Set up environment variables:
+Create `.env` files in both frontend and backend directories with required configurations.
+
+## Running the Application
+
+1. Start the backend service:
+```bash
+cd backend/community-service
+npm start
+```
+
+2. Start the frontend application (in a separate terminal):
+```bash
+cd frontend/community-app
+npm run dev
+```
+
+3. Access the application at:
+```
+http://localhost:5002
+```
+
+## Configuration
+
+### Backend Environment Variables
+Create a `.env` file in `backend/community-service`:
+```
+PORT=4002
+MONGODB_URI=mongodb://localhost:27017/community-engagement
+JWT_SECRET=your_jwt_secret_here
+```
+
+### Frontend Environment Variables
+Create a `.env` file in `frontend/community-app`:
+```
+VITE_API_URL=http://localhost:4002/graphql
+```
 
 ## Project Structure
 
 ```
 community-engagement-system/
 ├── backend/
-│   ├── auth-service/         # User Authentication Microservice
+│   ├── community-service/
 │   │   ├── src/
-│   │   │   ├── models/       # MongoDB schemas
-│   │   │   ├── graphql/      # GraphQL schemas and resolvers
-│   │   │   ├── utils/        # Utility functions
-│   │   │   └── index.js      # Entry point
-│   │   ├── package.json
-│   │   └── .env              # Environment variables
-│   │
-│   └── community-service/    # Community Engagement Microservice
-│       ├── src/
-│       │   ├── models/       # MongoDB schemas
-│       │   ├── graphql/      # GraphQL schemas and resolvers
-│       │   ├── utils/        # Utility functions
-│       │   └── index.js      # Entry point
-│       ├── package.json
-│       └── .env              # Environment variables
-│
+│   │   │   ├── graphql/         # GraphQL schema and resolvers
+│   │   │   ├── models/          # MongoDB models
+│   │   │   ├── utils/           # Utility functions
+│   │   │   └── index.js         # Main server file
+│   │   └── package.json
 ├── frontend/
-│   ├── host-app/             # Main application shell
+│   ├── community-app/
 │   │   ├── src/
-│   │   ├── vite.config.js
+│   │   │   ├── components/      # React components
+│   │   │   ├── pages/           # Application pages
+│   │   │   └── App.jsx          # Main application file
 │   │   └── package.json
-│   │
-│   ├── auth-app/             # Authentication Micro Frontend
-│   │   ├── src/
-│   │   ├── vite.config.js
-│   │   └── package.json
-│   │
-│   └── community-app/        # Community Engagement Micro Frontend
-│       ├── src/
-│       ├── vite.config.js
-│       └── package.json
-│
-└── package.json              # Root package.json for scripts
+└── README.md
 ```
 
-## Technologies Used
+## Contributing
 
-### Backend
-- Express.js - Web server framework
-- Apollo Server - GraphQL server
-- MongoDB - Database
-- Mongoose - MongoDB ODM
-- JWT - Authentication
+We welcome contributions! Please follow these guidelines:
 
-### Frontend
-- React - UI library
-- Vite - Build tool
-- Module Federation - Micro-frontend architecture
-- Apollo Client - GraphQL client
-- React Bootstrap - UI components
-- Formik & Yup - Form handling and validation
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## Prerequisites
+## License
 
-- Node.js (v14+)
-- MongoDB (local or Atlas)
+Distributed under the MIT License. See `LICENSE` for more information.
 
-## Setup Instructions
+## Contact
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd community-engagement-system
-```
+Project Maintainer: [Your Name](mailto:your.email@example.com)
 
-2. Install dependencies:
-```bash
-npm install
-npm run install:all
-```
-
-3. Configure environment variables:
-   - Update the `.env` files in both microservices with your MongoDB connection strings and JWT secret
-
-4. Start the backend services:
-```bash
-npm run start:backend
-```
-
-5. Start the frontend applications:
-```bash
-npm run start:frontend
-```
-
-6. Access the application:
-   - Host App: http://localhost:5000
-   - Auth App: http://localhost:5001
-   - Community App: http://localhost:5002
-
-## Features
-
-### User Authentication
-- User registration with role selection
-- User login/logout
-- JWT-based authentication
-
-### Community Engagement
-- News posting and viewing
-- Community discussions
-- Help requests with volunteer system
-- AI-generated summaries for long posts
-
-## User Roles
-
-- **Resident**: Regular community member
-- **Business Owner**: Local business representative
-- **Community Organizer**: Community leader with additional privileges
-
-## API Documentation
-
-### Auth Service (http://localhost:4001/graphql)
-- Mutations:
-  - `signup`: Register a new user
-  - `login`: Authenticate a user
-  - `logout`: Log out a user
-
-- Queries:
-  - `me`: Get the current authenticated user
-  - `getUser`: Get a user by ID
-  - `getUsers`: Get all users
-
-### Community Service (http://localhost:4002/graphql)
-- Mutations:
-  - `createPost`: Create a new community post
-  - `updatePost`: Update an existing post
-  - `deletePost`: Delete a post
-  - `generateAISummary`: Generate an AI summary for a post
-  - `createHelpRequest`: Create a new help request
-  - `updateHelpRequest`: Update an existing help request
-  - `resolveHelpRequest`: Mark a help request as resolved/unresolved
-  - `deleteHelpRequest`: Delete a help request
-  - `volunteerForHelp`: Volunteer for a help request
-  - `withdrawFromHelp`: Withdraw from a help request
-
-- Queries:
-  - `getPosts`: Get community posts (filtered by category)
-  - `getPost`: Get a post by ID
-  - `getPostsByUser`: Get posts by a specific user
-  - `getHelpRequests`: Get help requests (filtered by resolved status)
-  - `getHelpRequest`: Get a help request by ID
-  - `getHelpRequestsByUser`: Get help requests by a specific user
+Project Link: [https://github.com/yourusername/community-engagement-system](https://github.com/yourusername/community-engagement-system)
